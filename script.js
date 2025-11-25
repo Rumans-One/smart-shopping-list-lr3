@@ -17,7 +17,7 @@ function addTask() {
 
     // Внутри li будет текст и кнопка "Удалить"
     li.innerHTML = `
-        <span>${taskText}</span>
+        <span class="task-text" onclick="toggleDone(this)">${taskText}</span>
         <button onclick="this.parentElement.remove()">Удалить</button>
     `;
 
@@ -27,4 +27,9 @@ function addTask() {
     // Очищаем поле ввода и возвращаем фокус
     taskInput.value = '';
     taskInput.focus();
+}
+
+// Функция переключения состояния "куплено"
+function toggleDone(spanElement) {
+    spanElement.classList.toggle('done');
 }

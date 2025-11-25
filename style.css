@@ -49,4 +49,10 @@ button:hover {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 4px;
+{
+/* Состояние "купленный" товар */
+.done {
+    text-decoration: line-through;
+    color: #888;
 }
+
