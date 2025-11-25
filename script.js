@@ -33,3 +33,9 @@ function addTask() {
 function toggleDone(spanElement) {
     spanElement.classList.toggle('done');
 }
+// Очистка всего списка покупок
+function clearList() {
+    const taskList = document.getElementById('taskList');
+    taskList.innerHTML = '';
+}
+
