@@ -1,5 +1,30 @@
-// Логика приложения будет добавлена позже в отдельной ветке
-
+// Функция добавления нового товара в список
 function addTask() {
-    // Реализацию добавим в feature-ветке
+    const taskInput = document.getElementById('taskInput');
+    const taskText = taskInput.value.trim();
+
+    // Проверяем, что поле не пустое
+    if (!taskText) {
+        alert('Введите название товара!');
+        return;
+    }
+
+    // Находим список
+    const taskList = document.getElementById('taskList');
+
+    // Создаём новый элемент списка
+    const li = document.createElement('li');
+
+    // Внутри li будет текст и кнопка "Удалить"
+    li.innerHTML = `
+        <span>${taskText}</span>
+        <button onclick="this.parentElement.remove()">Удалить</button>
+    `;
+
+    // Добавляем элемент в список
+    taskList.appendChild(li);
+
+    // Очищаем поле ввода и возвращаем фокус
+    taskInput.value = '';
+    taskInput.focus();
 }
